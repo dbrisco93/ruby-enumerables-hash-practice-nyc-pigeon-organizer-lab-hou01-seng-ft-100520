@@ -7,13 +7,14 @@ def nyc_pigeon_organizer(data)
     value.each do |color_key, names|
       names.each do |name|
         #binding.pry
-      if !new_array[name]
-        new_array[name] = {}
+        if !new_array[name]
+          new_array[name] = {}
+        end
+        if !new_array[name][key]
+          !new_array[name][key] = []
+        end
+        new_array[name][key].push(color_key)
       end
-      if !new_array[name][key]
-        !new_array[name][key] = []
-      end
-      new_array[name][key].push(color_key)
     end
   end  
 binding.pry
